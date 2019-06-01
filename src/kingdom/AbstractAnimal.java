@@ -15,9 +15,9 @@ public abstract class AbstractAnimal
 		this.year = year;
 	}
 
-	public abstract String move();
-	public abstract String breath();
-	public abstract String reproduce();
+	public abstract String getMove();
+	public abstract String getBreath();
+	public abstract String getReproduce();
 
 	public String eat()
 	{

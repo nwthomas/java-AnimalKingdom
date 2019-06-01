@@ -15,19 +15,19 @@ public class Mammal extends AbstractAnimal
 	}
 
 	@Override
-	public String move() {
-		return "The movement method of " + name + " is " + moveMethod;
+	public String getMove() {
+		return moveMethod;
 	}
 
 	@Override
-	public String breath()
+	public String getBreath()
 	{
-		return "The breathing method of " + name + " is " + breathMethod;
+		return breathMethod;
 	}
 
 	@Override
-	public String reproduce()
+	public String getReproduce()
 	{
-		return "The reproduction method of " + name + " is " + reproduceMethod;
+		return reproduceMethod;
 	}
 }

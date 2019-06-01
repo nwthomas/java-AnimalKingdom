@@ -5,6 +5,17 @@ import java.io.*;
 
 public class Main
 {
+	public static void listWithLungs(ArrayList<AbstractAnimal> animalArray, CheckAnimal tester)
+	{
+		for (AbstractAnimal a : animalArray)
+		{
+			if (tester.test(a))
+			{
+				System.out.println(a.getName());
+			}
+		}
+	}
+
 	public static void createCollection()
 	{
 		// Instantiation of new mammels
@@ -46,13 +57,29 @@ public class Main
 		animalArray.add(catfish);
 		animalArray.add(perch);
 
-		// List animals in descending order by year named
+		System.out.println("*** List Descending by Year Named ***");
 		animalArray.sort((a1, a2) -> a2.getYear().compareTo(a1.getYear()));
 		animalArray.forEach(a -> System.out.println(a.toString()));
+		System.out.println();
 
-		// List all animals alphabetically
+		System.out.println("*** List All Animals Alphabetically ***");
 		animalArray.sort((a1, a2) -> a2.getName().compareToIgnoreCase(a1.getName()));
 		animalArray.forEach(a -> System.out.println(a.getName()));
+		System.out.println();
+
+		System.out.println("*** List All Animals By Movement ***");
+		animalArray.sort((a1, a2) -> a2.getMove().compareToIgnoreCase(a1.getMove()));
+		animalArray.forEach(a -> System.out.println(a.getName()));
+		System.out.println();
+
+		System.out.println("*** List Only Animals that Breath with Lungs ***");
+		listWithLungs(animalArray, a -> (a.getBreath() == "lungs") && (a instanceof AbstractAnimal));
+
+		// List only animals that breath with lungs and were named in 1758
+
+		// List only those animals that lay eggs and breath with lungs
+
+		// List alphabetically only those animals that were anmed in 1758
 	}
 
 	public static void main(String[] args)
