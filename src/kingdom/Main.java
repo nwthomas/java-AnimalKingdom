@@ -1,19 +1,20 @@
 package kingdom;
 
-import java.util.ArrayList;
+import java.util.*;
+import java.io.*;
 
 public class Main
 {
 	public static void createCollection()
 	{
 		// Instantiation of new mammels
-		Mammel panda = new Mammel("Panda", 1869);
-		Mammel zebra = new Mammel("Zebra", 1778);
-		Mammel koala = new Mammel("Koala", 1816);
-		Mammel sloth = new Mammel("Sloth", 1804);
-		Mammel armadillo = new Mammel("Armadillo", 1758);
-		Mammel raccoon = new Mammel("Racoon", 1758);
-		Mammel bigfoot = new Mammel("Bigfoot", 2021);
+		Mammal panda = new Mammal("Panda", 1869);
+		Mammal zebra = new Mammal("Zebra", 1778);
+		Mammal koala = new Mammal("Koala", 1816);
+		Mammal sloth = new Mammal("Sloth", 1804);
+		Mammal armadillo = new Mammal("Armadillo", 1758);
+		Mammal raccoon = new Mammal("Racoon", 1758);
+		Mammal bigfoot = new Mammal("Bigfoot", 2021);
 
 		// Instantiation of new birds
 		Bird pigeon = new Bird("Pigeon", 1837);
@@ -45,11 +46,13 @@ public class Main
 		animalArray.add(catfish);
 		animalArray.add(perch);
 
-		for (int i = 0; i < animalArray.size(); i++)
-		{
-			System.out.println(animalArray.get(i));
-		}
+		// List animals in descending order by year named
+		animalArray.sort((a1, a2) -> a2.getYear().compareTo(a1.getYear()));
+		animalArray.forEach(a -> System.out.println(a.toString()));
 
+		// List all animals alphabetically
+		animalArray.sort((a1, a2) -> a2.getName().compareToIgnoreCase(a1.getName()));
+		animalArray.forEach(a -> System.out.println(a.getName()));
 	}
 
 	public static void main(String[] args)

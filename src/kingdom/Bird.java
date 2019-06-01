@@ -6,7 +6,7 @@ public class Bird extends AbstractAnimal
 	String breathMethod;
 	String reproduceMethod;
 
-	public Bird(String name, int year)
+	public Bird(String name, Integer year)
 	{
 		super(name, year);
 		this.moveMethod = "fly";

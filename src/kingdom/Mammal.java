@@ -1,12 +1,12 @@
 package kingdom;
 
-public class Mammel extends AbstractAnimal
+public class Mammal extends AbstractAnimal
 {
 	String moveMethod;
 	String breathMethod;
 	String reproduceMethod;
 
-	public Mammel(String name, int year)
+	public Mammal(String name, Integer year)
 	{
 		super(name, year);
 		this.moveMethod = "walk";

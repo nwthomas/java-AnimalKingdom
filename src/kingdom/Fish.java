@@ -6,7 +6,7 @@ public class Fish extends AbstractAnimal
 	String breathMethod;
 	String reproduceMethod;
 
-	public Fish(String name, int year)
+	public Fish(String name, Integer year)
 	{
 		super(name, year);
 		this.moveMethod = "swim";
