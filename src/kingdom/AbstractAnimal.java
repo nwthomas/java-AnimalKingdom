@@ -3,6 +3,9 @@ package kingdom;
 public abstract class AbstractAnimal
 {
 	private static int maxId = 0;
+	protected int id;
+	protected String name;
+	protected int year;
 
 	public AbstractAnimal(String name, int year)
 	{
