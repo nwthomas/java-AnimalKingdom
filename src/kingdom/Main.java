@@ -5,7 +5,7 @@ import java.io.*;
 
 public class Main
 {
-	public static void listWithLungs(ArrayList<AbstractAnimal> animalArray, CheckAnimal tester)
+	public static void printAnimals(ArrayList<AbstractAnimal> animalArray, CheckAnimal tester)
 	{
 		for (AbstractAnimal a : animalArray)
 		{
@@ -15,6 +15,7 @@ public class Main
 			}
 		}
 	}
+		
 
 	public static void createCollection()
 	{
@@ -73,13 +74,21 @@ public class Main
 		System.out.println();
 
 		System.out.println("*** List Only Animals that Breath with Lungs ***");
-		listWithLungs(animalArray, a -> (a.getBreath() == "lungs") && (a instanceof AbstractAnimal));
+		printAnimals(animalArray, a -> (a.getBreath() == "lungs") && (a instanceof AbstractAnimal));
+		System.out.println();
 
-		// List only animals that breath with lungs and were named in 1758
+		System.out.println("*** List Only Animals that Breath with Lungs Named in 1758 ***");
+		printAnimals(animalArray, a -> (a.getBreath() == "lungs" && a.getYear() == 1758) && (a instanceof AbstractAnimal));
+		System.out.println();
 
-		// List only those animals that lay eggs and breath with lungs
+		System.out.println("*** List Only Animals that Lay Eggs and Breath with Lungs ***");
+		printAnimals(animalArray, a -> (a.getBreath() == "lungs" && a.getReproduce() == "eggs") && (a instanceof AbstractAnimal));
+		System.out.println();
 
-		// List alphabetically only those animals that were anmed in 1758
+		System.out.println("*** List Alphabetically only Animals Named in 1758 ***");
+		animalArray.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+		printAnimals(animalArray, a -> (a.getYear() == 1758) && a instanceof AbstractAnimal);
+
 	}
 
 	public static void main(String[] args)
