@@ -88,7 +88,11 @@ public class Main
 		System.out.println("*** List Alphabetically only Animals Named in 1758 ***");
 		animalArray.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
 		printAnimals(animalArray, a -> (a.getYear() == 1758) && a instanceof AbstractAnimal);
+		System.out.println();
 
+		System.out.println("*** List Alphabetically Animals that are also Mammals ***");
+		printAnimals(animalArray, a -> a instanceof Mammal);
+		System.out.println();
 	}
 
 	public static void main(String[] args)
